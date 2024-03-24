@@ -29,6 +29,7 @@ public class XmlProcessorTestUtil {
   private boolean keepBlankLines = true;
   private boolean endWithNewline = true;
   private boolean indentBlankLines = false;
+  private boolean indentEachAttribute = false;
   private String predefinedSortOrder = "recommended_2008_06";
   private boolean expandEmptyElements = true;
   private String lineSeparator = "\r\n";
@@ -90,7 +91,7 @@ public class XmlProcessorTestUtil {
                 spaceBeforeCloseEmptyElement,
                 keepBlankLines,
                 endWithNewline)
-            .setIndent(2, indentBlankLines, false)
+            .setIndent(2, indentBlankLines, indentEachAttribute, false)
             .setSortOrder(predefinedSortOrder + ".xml", null)
             .setSortEntities(
                 sortDependencies, "", null, sortPlugins, sortProperties, sortModules, false)

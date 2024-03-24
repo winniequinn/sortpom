@@ -50,7 +50,7 @@ class IndentationTest {
         PluginParameters.builder()
             .setEncoding("UTF-8")
             .setFormatting(lineSeparator, true, true, false, true)
-            .setIndent(indent, false, true)
+            .setIndent(indent, false, false, true)
             .build());
 
     var actual = xmlOutputGenerator.getSortedXml(createXmlProjectFragment());
@@ -91,7 +91,7 @@ class IndentationTest {
         PluginParameters.builder()
             .setEncoding("UTF-8")
             .setFormatting(lineSeparator, true, true, false, true)
-            .setIndent(2, false, true)
+            .setIndent(2, false, false, true)
             .build());
 
     var xmlProjectFragment = createXmlProjectFragment();

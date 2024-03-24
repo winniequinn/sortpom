@@ -4,13 +4,20 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.github.ekryd.sortpom.its</groupId>
-  <artifactId>four-spaces-indent</artifactId>
+  <artifactId>indent-each-attribute-two-spaces</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>SortPom Plugin :: ITs :: Four spaces indent</name>
-  <description>Test indentation with four spaces</description>
+  <name>SortPom Plugin :: ITs :: Indent each attribute two spaces</name>
+  <description>Test indenting each attribute with two spaces</description>
 
   <url>no-url</url>
+
+  <scm
+       child.scm.connection.inherit.append.path="false"
+       child.scm.developerConnection.inherit.append.path="false"
+       child.scm.url.inherit.append.path="false">
+    <url>https://example.com</url>
+  </scm>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -29,9 +36,9 @@
             </goals>
             <configuration>
               <expandEmptyElements>false</expandEmptyElements>
-              <nrOfIndentSpace>4</nrOfIndentSpace>
-              <indentBlankLines />
-              <indentSchemaLocation>true</indentSchemaLocation>
+              <nrOfIndentSpace>2</nrOfIndentSpace>
+              <indentBlankLines/>
+              <indentEachAttribute>true</indentEachAttribute>
             </configuration>
           </execution>
         </executions>

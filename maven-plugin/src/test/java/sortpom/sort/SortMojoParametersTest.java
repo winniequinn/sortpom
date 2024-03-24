@@ -198,6 +198,12 @@ class SortMojoParametersTest {
   }
 
   @Test
+  void parameterEachAttributeShouldEndUpInXmlProcessor() {
+    assertParameterMoveFromMojoToRestOfApplicationForBoolean(
+        "indentEachAttribute", xmlOutputGenerator);
+  }
+
+  @Test
   void parameterIndentSchemaLocationShouldEndUpInXmlProcessor() {
     assertParameterMoveFromMojoToRestOfApplicationForBoolean(
         "indentSchemaLocation", xmlOutputGenerator);

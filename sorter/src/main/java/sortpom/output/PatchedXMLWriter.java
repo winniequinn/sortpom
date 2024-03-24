@@ -18,6 +18,7 @@ class PatchedXMLWriter extends XMLWriter {
 
   private final OutputFormat format;
   private final boolean indentBlankLines;
+  private final boolean indentEachAttribute;
   private final boolean indentSchemaLocation;
   private final boolean spaceBeforeCloseEmptyElement;
   private final boolean endWithNewline;
@@ -27,11 +28,13 @@ class PatchedXMLWriter extends XMLWriter {
       OutputFormat format,
       boolean spaceBeforeCloseEmptyElement,
       boolean indentBlankLines,
+      boolean indentEachAttribute,
       boolean indentSchemaLocation,
       boolean endWithNewline) {
     super(writer, format);
     this.format = format;
     this.indentBlankLines = indentBlankLines;
+    this.indentEachAttribute = indentEachAttribute;
     this.indentSchemaLocation = indentSchemaLocation;
     this.spaceBeforeCloseEmptyElement = spaceBeforeCloseEmptyElement;
     this.endWithNewline = endWithNewline;
@@ -115,14 +118,18 @@ class PatchedXMLWriter extends XMLWriter {
     }
   }
 
-  /** Handle indentSchemaLocation option */
+  /** Handle indentEachAttribute and indentSchemaLocation options */
   @Override
   protected void writeAttribute(Attribute attribute) throws IOException {
     var qualifiedName = attribute.getQualifiedName();
-    if (indentSchemaLocation && "xsi:schemaLocation".equals(qualifiedName)) {
-      writePrintln();
-      writeString(format.getIndent());
-      writeString(format.getIndent());
+    if (indentEachAttribute || indentSchemaLocation) {
+      var isSchemaLocation = "xsi:schemaLocation".equals(qualifiedName);
+      if (indentEachAttribute && !isSchemaLocation || indentSchemaLocation && isSchemaLocation) {
+        writePrintln();
+        indent();
+        writeString(format.getIndent());
+        writeString(format.getIndent());
+      }
     }
     writer.write(" ");
     writer.write(qualifiedName);

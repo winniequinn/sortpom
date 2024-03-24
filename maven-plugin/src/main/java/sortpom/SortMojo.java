@@ -30,7 +30,11 @@ public class SortMojo extends AbstractParentMojo {
                           spaceBeforeCloseEmptyElement,
                           keepBlankLines,
                           endWithNewline)
-                      .setIndent(nrOfIndentSpace, indentBlankLines, indentSchemaLocation)
+                      .setIndent(
+                          nrOfIndentSpace,
+                          indentBlankLines,
+                          indentEachAttribute,
+                          indentSchemaLocation)
                       .setSortOrder(sortOrderFile, predefinedSortOrder)
                       .setSortEntities(
                           sortDependencies,

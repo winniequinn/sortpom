@@ -69,6 +69,12 @@ sortpom:sort
       User property: sort.indentBlankLines
       Should blank lines (if preserved) have indentation.
 
+    indentEachAttribute (Default: false)
+      User property: sort.indentEachAttribute
+      Should each attribute (other than the schema location -- see
+      'indentSchemaLocation') be placed on a new line. Each attribute will be
+      indented (2 * nrOfIndentSpace + 1 space) characters.
+
     indentSchemaLocation (Default: false)
       User property: sort.indentSchemaLocation
       Should the schema location attribute of project (top level xml element)
@@ -199,6 +205,12 @@ sortpom:verify
       User property: sort.indentBlankLines
       Should blank lines (if preserved) have indentation.
 
+    indentEachAttribute (Default: false)
+      User property: sort.indentEachAttribute
+      Should each attribute (other than the schema location -- see
+      'indentSchemaLocation') be placed on a new line. Each attribute will be
+      indented (2 * nrOfIndentSpace + 1 space) characters.
+
     indentSchemaLocation (Default: false)
       User property: sort.indentSchemaLocation
       Should the schema location attribute of project (top level xml element)
@@ -305,4 +317,3 @@ sortpom:verify
       User property: sort.violationFilename
       Saves the verification failure to an external xml file, recommended
       filename is 'target/sortpom_reports/violation.xml'.
-

@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.ekryd.sortpom.its</groupId>
-    <artifactId>four-spaces-indent</artifactId>
+    <artifactId>indent-schema-location-four-spaces</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>SortPom Plugin :: ITs :: Four spaces indent</name>
-    <description>Test indentation with four spaces</description>
+    <name>SortPom Plugin :: ITs :: Indent schema location four spaces</name>
+    <description>Test schema location indentation with four spaces</description>
 
     <url>no-url</url>
 
